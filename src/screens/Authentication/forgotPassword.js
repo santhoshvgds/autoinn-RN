@@ -20,7 +20,7 @@ const forgetPassword = () => {
           // console.log("result", result)
           setVisibilty(true);
           let {data} = result ? result : null;
-          if (data.code === 200) {
+          if (data && data.code === 200) {
             // let {response} = data;
             // if (response.code === 200) {
             // }

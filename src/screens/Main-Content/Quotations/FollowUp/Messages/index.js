@@ -82,7 +82,7 @@ const Messages = (props) => {
       .get(`/api/customer/smsHistory/${props.route.params.customer}`)
       .then((res) => {
         let {data} = res ? res : null;
-        if (data.code === 200) {
+        if (data && data.code === 200) {
           let {response} = data;
           if (response.code === 200) {
             setMessageData(response.data);

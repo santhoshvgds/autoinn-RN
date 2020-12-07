@@ -58,7 +58,7 @@ const LoginPage = ({navigation}) => {
       let obj;
       platformApi.get('/api/user/currentUser').then((result) => {
         let {data} = result ? result : null;
-        if (data.code === 200) {
+        if (data && data.code === 200) {
           let {response} = data;
           if (response.code === 200) {
             if (response.data.profile)
@@ -85,7 +85,7 @@ const LoginPage = ({navigation}) => {
     setLoading(true);
     platformApi.post('/api/user/login', {phone, password}).then((res) => {
       let {data} = res ? res : null;
-      if (data.code === 200) {
+      if (data && data.code === 200) {
         let {response} = data;
         if (response.code === 200) {
           // console.log('response', response)
@@ -94,7 +94,7 @@ const LoginPage = ({navigation}) => {
           platformApi.get('/api/user/currentUser').then((result) => {
             setLoading(false);
             let {data} = result ? result : null;
-            if (data.code === 200) {
+            if (data && data.code === 200) {
               let {response} = data;
               if (response.code === 200) {
                 if (response.data.profile)

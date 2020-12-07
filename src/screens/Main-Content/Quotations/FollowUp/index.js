@@ -145,7 +145,7 @@ const FollowUp = (props) => {
       .get(`/api/customer/phone-no/${props.route.params.phone}`)
       .then((res) => {
         let {data} = res ? res : null;
-        if (data.code === 200) {
+        if (data && data.code === 200) {
           let {response} = data;
           if (response.code === 200) {
             setCustomerData(response.data.customers);
@@ -161,7 +161,7 @@ const FollowUp = (props) => {
               .then((res) => {
                 console.log('res', res);
                 let {data} = res ? res : null;
-                if (data.code === 200) {
+                if (data && data.code === 200) {
                   let {response} = data;
                   if (response.code === 200) {
                     // console.log("responseActivity", response.data)
@@ -179,7 +179,7 @@ const FollowUp = (props) => {
               .then((res) => {
                 console.log('res', res);
                 let {data} = res ? res : null;
-                if (data.code === 200) {
+                if (data && data.code === 200) {
                   let {response} = data;
                   if (response.code === 200) {
                     console.log('quotation', response.data);
@@ -218,7 +218,7 @@ const FollowUp = (props) => {
         .get(`/api/vehicle/${purchasedVehicles[selectedVehicleIndex].id}`)
         .then((res) => {
           let {data} = res ? res : null;
-          if (data.code === 200) {
+          if (data && data.code === 200) {
             let {response} = data;
             if (response.code === 200) {
               console.log('VehicleSelected', response.data);
@@ -244,7 +244,7 @@ const FollowUp = (props) => {
       .then((res) => {
         let {data} = res ? res : null;
         setRefreshing(false);
-        if (data.code === 200) {
+        if (data && data.code === 200) {
           let {response} = data;
           if (response.code === 200) {
             setActivityData([...response.data]);

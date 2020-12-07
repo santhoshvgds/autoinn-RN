@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {NavigationContainer} from '@react-navigation/native';
 import Quotations from '../../screens/Main-Content/Quotations';
 import CustomerDetailsForm from '../../screens/Main-Content/Quotations/AddQuotation/CustomerDetailsForm';
 import LeadDataForm from '../../screens/Main-Content/Quotations/AddQuotation/LeadDataForm';
 import PricingForm from '../../screens/Main-Content/Quotations/AddQuotation/PricingForm';
 import SelectVehicleForm from '../../screens/Main-Content/Quotations/AddQuotation/SelectVehicleForm';
-import FollowUp from "../../screens/Main-Content/Quotations/FollowUp"
-import { Icon } from 'react-native-elements';
+import FollowUp from '../../screens/Main-Content/Quotations/FollowUp';
+import {Icon} from 'react-native-elements';
 import Messages from '../../screens/Main-Content/Quotations/FollowUp/Messages';
 import CreateSMS from '../../screens/Main-Content/Quotations/FollowUp/Messages/CreateSMS';
 import ActivityInfo from '../../screens/Main-Content/Quotations/FollowUp/ActivityView';
@@ -24,7 +24,7 @@ const QuotationRoute = () => {
           headerShown: false,
           headerStyle: {
             backgroundColor: 'black',
-            height: 60
+            height: 60,
           },
         }}
         name="Quotations"
@@ -32,227 +32,215 @@ const QuotationRoute = () => {
       />
       <Quotation.Screen
         options={{
-          title: "QUOTATION CREATION",
+          title: 'QUOTATION CREATION',
           headerStyle: {
             backgroundColor: '#f75b5b',
           },
           headerTitleStyle: {
             color: 'white',
             fontSize: 15,
-
           },
           headerBackTitle: null,
           headerBackTitleStyle: {
             fontSize: 15,
-            color: 'white'
+            color: 'white',
           },
-
         }}
         name="Customer Details Form"
         component={CustomerDetailsForm}
       />
       <Quotation.Screen
         options={{
-          title: "QUOTATION CREATION",
+          title: 'QUOTATION CREATION',
           headerStyle: {
             backgroundColor: '#f75b5b',
-
           },
           headerBackTitle: null,
           headerTitleStyle: {
             color: 'white',
-            fontSize: 15
+            fontSize: 15,
           },
           headerBackTitleStyle: {
             fontSize: 15,
-            color: 'white'
-          }
+            color: 'white',
+          },
         }}
         name="Lead Data Form"
         component={LeadDataForm}
       />
       <Quotation.Screen
         options={{
-          title: "QUOTATION CREATION",
+          title: 'QUOTATION CREATION',
           headerStyle: {
             backgroundColor: '#f75b5b',
-
           },
           headerBackTitle: null,
           headerTitleStyle: {
             color: 'white',
-            fontSize: 15
+            fontSize: 15,
           },
           headerBackTitleStyle: {
             fontSize: 15,
-            color: 'white'
-          }
+            color: 'white',
+          },
         }}
         name="Pricing Form"
         component={PricingForm}
       />
       <Quotation.Screen
         options={{
-          title: "QUOTATION CREATION",
+          title: 'QUOTATION CREATION',
           headerStyle: {
             backgroundColor: '#f75b5b',
-
           },
           headerBackTitle: null,
           headerTitleStyle: {
             color: 'white',
-            fontSize: 15
+            fontSize: 15,
           },
           headerBackTitleStyle: {
             fontSize: 15,
-            color: 'white'
-          }
+            color: 'white',
+          },
         }}
         name="Select Vehicle Form"
         component={SelectVehicleForm}
       />
       <Quotation.Screen
         options={{
-          title: "FOLLOW UP",
+          title: 'FOLLOW UP',
           headerStyle: {
             backgroundColor: '#f75b5b',
-
           },
           headerBackTitle: null,
           headerTitleStyle: {
             color: 'white',
-            fontSize: 15
+            fontSize: 15,
           },
           headerBackTitleStyle: {
             fontSize: 15,
-            color: 'white'
-          }
+            color: 'white',
+          },
         }}
         name="Follow Up"
         component={FollowUp}
       />
       <Quotation.Screen
         options={{
-          title: "MESSAGE FOLLOW UP",
+          title: 'MESSAGE FOLLOW UP',
           headerStyle: {
             backgroundColor: '#f75b5b',
-
           },
           headerBackTitle: null,
           headerTitleStyle: {
             color: 'white',
-            fontSize: 15
+            fontSize: 15,
           },
           headerBackTitleStyle: {
             fontSize: 15,
-            color: 'white'
-          }
+            color: 'white',
+          },
         }}
         name="Message"
         component={Messages}
       />
       <Quotation.Screen
         options={{
-          title: "CREATE NEW SMS",
+          title: 'CREATE NEW SMS',
           headerStyle: {
             backgroundColor: '#f75b5b',
-
           },
           headerBackTitle: null,
           headerTitleStyle: {
             color: 'white',
-            fontSize: 15
+            fontSize: 15,
           },
           headerBackTitleStyle: {
             fontSize: 15,
-            color: 'white'
-          }
+            color: 'white',
+          },
         }}
         name="CreateSMS"
         component={CreateSMS}
       />
       <Quotation.Screen
         options={{
-          title: "ACTIVITY INFO",
+          title: 'ACTIVITY INFO',
           headerStyle: {
             backgroundColor: '#f75b5b',
-
           },
           headerBackTitle: null,
           headerTitleStyle: {
             color: 'white',
-            fontSize: 15
+            fontSize: 15,
           },
           headerBackTitleStyle: {
             fontSize: 15,
-            color: 'white'
-          }
+            color: 'white',
+          },
         }}
         name="ActivityInfo"
         component={ActivityInfo}
       />
       <Quotation.Screen
         options={{
-          title: "PDF",
+          title: 'PDF',
           headerStyle: {
             backgroundColor: '#f75b5b',
-
           },
           headerBackTitle: null,
           headerTitleStyle: {
             color: 'white',
-            fontSize: 15
+            fontSize: 15,
           },
           headerBackTitleStyle: {
             fontSize: 15,
-            color: 'white'
-          }
+            color: 'white',
+          },
         }}
         name="Pdf"
         component={PdfView}
       />
       <Quotation.Screen
         options={{
-          title: "WALK-IN ACTIVITY",
+          title: 'WALK-IN ACTIVITY',
           headerStyle: {
             backgroundColor: '#f75b5b',
-
           },
           headerBackTitle: null,
           headerTitleStyle: {
             color: 'white',
-            fontSize: 15
+            fontSize: 15,
           },
           headerBackTitleStyle: {
             fontSize: 15,
-            color: 'white'
-          }
+            color: 'white',
+          },
         }}
         name="NewActivity"
         component={NewActivity}
       />
       <Quotation.Screen
         options={{
-          title: "VIEW QUOTATION",
+          title: 'VIEW QUOTATION',
           headerStyle: {
             backgroundColor: '#f75b5b',
-
           },
           headerBackTitle: null,
           headerTitleStyle: {
             color: 'white',
-            fontSize: 15
+            fontSize: 15,
           },
           headerBackTitleStyle: {
             fontSize: 15,
-            color: 'white'
-          }
+            color: 'white',
+          },
         }}
         name="View Quotation"
         component={ViewQuotation}
       />
     </Quotation.Navigator>
-  )
-}
+  );
+};
 
-export default QuotationRoute
+export default QuotationRoute;

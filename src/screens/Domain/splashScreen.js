@@ -37,7 +37,7 @@ const splashScreen = ({navigation}) => {
         .then((result) => {
           console.log('result', result);
           let {data} = result ? result : null;
-          if (data.code === 200) {
+          if (data && data.code === 200) {
             // console.log("response", data.response)
             let {response} = data;
             if (response.code === 200) {

@@ -251,7 +251,7 @@ const ViewQuotation = (props) => {
     // console.log("objjjjjjjjjjjj", obj);
     platformApi.post('api/sendSms/quotation', obj).then((result) => {
       const {data} = result ? result : null;
-      if (data.code === 200) {
+      if (data && data.code === 200) {
         alert('Message sent Successfully');
         // dataProps.setDataSource([quotationData, ...dataProps.dataSource])
         props.navigation.navigate('Quotations');
@@ -269,7 +269,7 @@ const ViewQuotation = (props) => {
     // console.log("singleData", singleData)
     platformApi.post('api/quotation/pdfGenerate', {id}).then((result) => {
       let {data} = result ? result : null;
-      if (data.code === 200) {
+      if (data && data.code === 200) {
         let {response} = data;
         // console.log("response", response)
         if (response.code === 200) {

@@ -1,4 +1,4 @@
-import React, { useContext} from 'react';
+import React, {useContext} from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import Dashboard from '../../screens/Dashboard';
 import CustomDrawerContent from './customDrawer';
@@ -12,7 +12,7 @@ const Drawer = createDrawerNavigator();
 export default function index() {
   let {loginCredintials} = useContext(ContextAPI);
 
-  // console.log("hello", loginCredintials);
+  console.log('hello', loginCredintials);
   let dp = loginCredintials.profilePicture;
   let name = loginCredintials.employeeName;
   return (
@@ -37,7 +37,7 @@ export default function index() {
         height: '100%',
       }}>
       <Drawer.Screen name="Dashboard" component={Dashboard} />
-      <Drawer.Screen name="Quotations" component={QuotationRoute} />
+      {/* <Drawer.Screen name="Quotations" component={QuotationRoute} /> */}
       <Drawer.Screen name="Follow up" component={FollowUp} />
       <Drawer.Screen name="Booking Register" component={BookingRegisterRoute} />
       {/* <Drawer.Screen name="CRM" component={Dashboard} /> */}

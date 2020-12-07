@@ -192,7 +192,7 @@ const CustomerDetailsForm = (props) => {
     dataProps.singleData.quotationPhone = phone;
     platformApi.get('/api/user/currentUser').then((result) => {
       let {data} = result ? result : null;
-      if (data.code === 200) {
+      if (data && data.code === 200) {
         let {response} = data;
         if (response.code === 200) {
           dataProps.singleData.executive = response.data.id;
@@ -241,7 +241,7 @@ const CustomerDetailsForm = (props) => {
     let data = text || phone;
     platformApi.get('api/customer/phone/' + data).then((result) => {
       let {data} = result ? result : null;
-      if (data.code === 200) {
+      if (data && data.code === 200) {
         let {response} = data;
         if (response.code === 200) {
           if (response.data[0]) {
