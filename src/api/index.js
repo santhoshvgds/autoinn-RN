@@ -1,11 +1,11 @@
-import axios from "axios";
+import axios from 'axios';
 import AsyncStorage from '@react-native-community/async-storage';
 
 const getAccessToken = async () => {
-  return await AsyncStorage.getItem("token");
+  return await AsyncStorage.getItem('token');
 };
 const setAccessToken = async (token) =>
-  await AsyncStorage.setItem("token", token);
+  await AsyncStorage.setItem('token', token);
 
 let baseUrl;
 let platformApi;
@@ -13,29 +13,29 @@ let platformApi;
   const getvalue = async () => {
     if (!baseUrl) {
       // console.log(baseUrl);
-      await AsyncStorage.getItem("domainName")
+      await AsyncStorage.getItem('domainName')
         .then((domainName) => {
-          // baseUrl = domainName;
-          baseUrl = 'http://localhost:4000'
+          baseUrl = domainName;
+          // baseUrl = 'http://localhost:4000'
           platformApi = axios.create({
             baseURL: baseUrl,
             headers: {
-              "content-Type": "application/json",
+              'content-Type': 'application/json',
             },
           });
           platformApi.interceptors.request.use(async (config) => {
             await getAccessToken().then((token) => {
               if (token) {
-                config.headers["x-access-token"] = token;
+                config.headers['x-access-token'] = token;
               }
             });
             return config;
           });
           platformApi.interceptors.response.use(
             (config) => config,
-            (error) => {}
+            (error) => {},
           );
-          console.log("Done")
+          console.log('Done');
         })
         .catch((err) => {
           console.log(err);
@@ -50,4 +50,4 @@ let platformApi;
 })();
 //   and interceptor comes here
 const accessToken = getAccessToken();
-export { platformApi, setAccessToken, baseUrl, getAccessToken };
+export {platformApi, setAccessToken, baseUrl, getAccessToken};
