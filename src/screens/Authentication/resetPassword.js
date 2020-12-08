@@ -18,10 +18,10 @@ const resetPassword = (props) => {
           //   console.log("response", data.response)
           let {response} = data;
           if (response.code === 200) {
-            console.log(
-              '---------------------------><--------------------iddd',
-              result.data.response.data.id,
-            );
+            // console.log(
+            //   '---------------------------><--------------------iddd',
+            //   result.data.response.data.id,
+            // );
             setid(result.data.response.data.id);
           }
         }
@@ -36,7 +36,7 @@ const resetPassword = (props) => {
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const passwordchange = () => {
-    console.log('reference', password, id);
+    // console.log('reference', password, id);
     if (!error) {
       platformApi
         .post('/api/user/updatePassword', {password, id})

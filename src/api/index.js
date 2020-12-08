@@ -42,7 +42,7 @@ let platformApi;
         });
       getvalue();
     } else {
-      getvalue;
+      getvalue();
     }
   };
 

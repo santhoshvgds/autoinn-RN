@@ -12,7 +12,7 @@ const Drawer = createDrawerNavigator();
 export default function index() {
   let {loginCredintials} = useContext(ContextAPI);
 
-  console.log('hello', loginCredintials);
+  // console.log('hello', loginCredintials);
   let dp = loginCredintials.profilePicture;
   let name = loginCredintials.employeeName;
   return (

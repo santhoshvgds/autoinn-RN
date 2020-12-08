@@ -10,7 +10,7 @@ export default function App() {
       try {
         await AsyncStorage.setItem('token', 'a');
         let a = await AsyncStorage.getItem('token');
-        console.log(a);
+        // console.log(a);
       } catch (error) {
         console.log(error);
       }

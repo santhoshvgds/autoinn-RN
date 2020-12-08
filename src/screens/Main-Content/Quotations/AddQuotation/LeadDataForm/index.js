@@ -76,7 +76,7 @@ const LeadDataForm = (props) => {
   const dataProps = props.route.params.params;
 
   useEffect(() => {
-    console.log('hello', loginCredintials.branch);
+    // console.log('hello', loginCredintials.branch);
     if (dataProps.singleData.view) {
       setFollowDate(
         dataProps.singleData.scheduleDate
@@ -104,7 +104,7 @@ const LeadDataForm = (props) => {
         array.push(obj);
       });
       dataProps.singleData.branch = array[0].value;
-      console.log(array);
+      // console.log(array);
       if (array) setBranch(array);
     }
   }, []);
@@ -175,7 +175,7 @@ const LeadDataForm = (props) => {
         // console.log("response", response)
         if (response.code === 200) {
           setPageLoad(false);
-          console.log('responsePDF', response);
+          // console.log('responsePDF', response);
           let Location =
             response.pdfWithBrochure.data &&
             response.pdfWithBrochure.data.Location;

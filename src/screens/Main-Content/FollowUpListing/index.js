@@ -163,7 +163,7 @@ const FollowUpListing = (props) => {
         if (data.code === 200) {
           const { response } = data;
           if (response.code === 200) {
-            console.log("response", response.data)
+            // console.log("response", response.data)
             if (response.data.customers.length) {
               setNewData(true)
             }
@@ -192,7 +192,7 @@ const FollowUpListing = (props) => {
   useEffect(() => {
     setPrimaryData()
   }, [page, search])
-  console.log("data", dataSource)
+  // console.log("data", dataSource)
 
   return (
     <View style={{ height: '100%', backgroundColor: 'lightgray' }}>

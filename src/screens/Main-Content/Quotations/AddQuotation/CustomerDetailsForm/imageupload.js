@@ -40,7 +40,7 @@ const imageupload = (props) => {
         quality: 1,
       };
       ImagePicker.launchImageLibrary(options, (response) => {
-        console.log('Response = ', response);
+        // console.log('Response = ', response);
 
         if (response.didCancel) {
           console.log('User cancelled image picker');
@@ -53,8 +53,8 @@ const imageupload = (props) => {
           props.onImageTaken(response.uri);
         }
       });
-    } catch (E) {
-      console.log(E);
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -73,7 +73,7 @@ const imageupload = (props) => {
       base64: true,
     };
     ImagePicker.launchCamera(options, (res) => {
-      console.log('Response = ', res);
+      // console.log('Response = ', res);
 
       if (res.didCancel) {
         console.log('User cancelled image picker');

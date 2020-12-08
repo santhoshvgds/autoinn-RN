@@ -10,7 +10,7 @@ const splashScreen = ({navigation}) => {
 
   const checkDomain = async () => {
     const value = await AsyncStorage.getItem('domainName');
-    console.log('value', value);
+    // console.log('value', value);
     if (value !== null) {
       axios
         .get(value)
@@ -30,6 +30,7 @@ const splashScreen = ({navigation}) => {
     }
   };
   const checkLogin = async () => {
+    console.log('token ' + AsyncStorage.getItem('token'));
     if (AsyncStorage.getItem('token')) {
       let obj;
       platformApi
@@ -37,8 +38,9 @@ const splashScreen = ({navigation}) => {
         .then((result) => {
           console.log('result', result);
           let {data} = result ? result : null;
+          console.log(data);
           if (data && data.code === 200) {
-            // console.log("response", data.response)
+            console.log('response', data.response);
             let {response} = data;
             if (response.code === 200) {
               if (response.data.profile)
@@ -48,6 +50,7 @@ const splashScreen = ({navigation}) => {
                   employeeId: response.data.id,
                 };
               obj.profilePicture = response.data.profilePicture;
+              console.log(obj);
               setLoginCredintials(obj);
               navigation.navigate('HomeScreen', {
                 params: response.data.user,
@@ -67,7 +70,7 @@ const splashScreen = ({navigation}) => {
   };
 
   useEffect(() => {
-    console.log('object');
+    // console.log('object');
     checkDomain();
     setTimeout(() => {
       // console.log("platform", platformApi);

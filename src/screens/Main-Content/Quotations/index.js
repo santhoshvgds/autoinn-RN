@@ -448,8 +448,8 @@ const Quotations = (props) => {
         onChangeText={(text) => {
           setDataSource([]),
             setPage(1),
-            setSearch(text),
-            console.log('text', text);
+            setSearch(text)
+            // console.log('text', text);
         }}
         value={search}
         round

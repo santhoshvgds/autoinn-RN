@@ -159,7 +159,7 @@ const FollowUp = (props) => {
                 ids: customersId,
               })
               .then((res) => {
-                console.log('res', res);
+                // console.log('res', res);
                 let {data} = res ? res : null;
                 if (data && data.code === 200) {
                   let {response} = data;
@@ -177,12 +177,12 @@ const FollowUp = (props) => {
                 ids: customersId,
               })
               .then((res) => {
-                console.log('res', res);
+                // console.log('res', res);
                 let {data} = res ? res : null;
                 if (data && data.code === 200) {
                   let {response} = data;
                   if (response.code === 200) {
-                    console.log('quotation', response.data);
+                    // console.log('quotation', response.data);
                     setPurchasedVehicles(response.data.purchasedVehicle);
                     // setActivityData(response.data)
                     let tableArray = [];
